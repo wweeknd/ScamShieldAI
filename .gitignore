@@ -1,0 +1,60 @@
+# ==========================================================================
+#  ScamShield AI — .gitignore
+# ==========================================================================
+
+# ---- Secrets -------------------------------------------------------------
+.env
+*.env
+!.env.example
+backend/.env
+frontend/.env
+
+# ---- Python (backend) ----------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.Python
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local SQLite database (regenerated on boot; demo data re-seeds via AUTO_SEED)
+*.db
+*.sqlite
+*.sqlite3
+
+# ---- Node / Vite (frontend) ---------------------------------------------
+node_modules/
+frontend/dist/
+dist/
+*.local
+.vite/
+
+# npm/yarn/pnpm debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# NOTE: frontend/public/{favicon.svg,og-image.png,apple-touch-icon.png} are
+# committed on purpose — they are one-time assets (og-image is produced by
+# scripts/gen_og.py, which needs Pillow and is NOT part of the build). The
+# sitemap.xml / robots.txt / llms.txt files ARE regenerated on every build by
+# the `prebuild` script, so committing them is optional.
+
+# ---- OS / editor cruft ---------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+*.swp
+*~
+
+# Keep VS Code shared settings but ignore user-local noise
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json

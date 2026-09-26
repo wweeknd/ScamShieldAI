@@ -1,0 +1,17 @@
+# ScamShield AI — backend dependencies
+# Works on Python 3.11–3.13
+
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+sqlalchemy>=2.0.30
+pydantic>=2.7.0
+python-multipart>=0.0.9      # required for file (QR image) uploads
+python-dotenv>=1.0.1
+requests>=2.31.0             # VirusTotal REST calls
+rapidfuzz>=3.9.0             # fuzzy indicator matching (correlation agent)
+langgraph>=0.2.28            # multi-agent orchestration
+anthropic>=0.39.0            # Claude LLM (optional — graceful fallback if unset)
+opencv-python-headless>=4.9.0  # QR decoding (no system libs needed, unlike pyzbar)
+numpy>=1.26.0
+scikit-learn>=1.5.0            # trained scam classifier (replaces the rulebook)
+psycopg2-binary>=2.9.9       # PostgreSQL driver (used on Render; SQLite needs nothing)

@@ -1,0 +1,5 @@
+# ScamShield AI
+User-agent: *
+Allow: /
+
+Sitemap: https://www.scamshield-ai.com/sitemap.xml

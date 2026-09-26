@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        width: 320px;
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #0b0b0b;
+        color: #e5e2e1;
+      }
+      .hd {
+        padding: 14px 16px;
+        border-bottom: 1px solid #222;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .hd .logo {
+        width: 22px; height: 22px;
+        background: #ff5625;
+        border-radius: 4px;
+        display: grid; place-items: center;
+        color: #000; font-weight: 800; font-size: 13px;
+      }
+      .hd .t { font-weight: 700; font-size: 14px; }
+      .hd .s { font-size: 10px; color: #737373; text-transform: uppercase; letter-spacing: .08em; }
+      .body { padding: 14px 16px; }
+      .row { margin-bottom: 12px; }
+      label { display: block; font-size: 10px; text-transform: uppercase; letter-spacing: .08em; color: #737373; margin-bottom: 4px; }
+      input, select, textarea {
+        width: 100%; box-sizing: border-box;
+        background: #1a1a1a; border: 1px solid #2a2a2a; color: #e5e2e1;
+        border-radius: 4px; padding: 8px; font-size: 13px; outline: none;
+      }
+      input:focus, select:focus, textarea:focus { border-color: #ff5625; }
+      textarea { resize: vertical; min-height: 60px; }
+      .btn {
+        width: 100%; background: #ff5625; color: #000; border: none;
+        padding: 10px; border-radius: 4px; font-weight: 800; font-size: 12px;
+        text-transform: uppercase; letter-spacing: .06em; cursor: pointer;
+      }
+      .btn:disabled { opacity: .5; cursor: default; }
+      .result { margin-top: 14px; border-top: 1px solid #222; padding-top: 14px; }
+      .meter { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+      .bar { flex: 1; height: 8px; background: #222; border-radius: 4px; overflow: hidden; }
+      .bar > div { height: 100%; transition: width .4s; }
+      .score { font-weight: 800; font-size: 18px; }
+      .sev { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; font-weight: 700; }
+      .reasons { font-size: 12px; color: #b4b5b5; margin-top: 8px; }
+      .reasons li { margin-bottom: 4px; }
+      .err { color: #ff3b3b; font-size: 12px; }
+      .link { color: #ff5625; text-decoration: none; font-size: 12px; display: inline-block; margin-top: 10px; }
+    </style>
+  </head>
+  <body>
+    <div class="hd">
+      <div class="logo">S</div>
+      <div>
+        <div class="t">ScamShield AI</div>
+        <div class="s">Browser Extension</div>
+      </div>
+    </div>
+    <div class="body">
+      <div class="row">
+        <label>Channel</label>
+        <select id="type">
+          <option value="url">URL / webpage</option>
+          <option value="email">Email</option>
+          <option value="sms">SMS / text</option>
+          <option value="job">Job offer</option>
+        </select>
+      </div>
+      <div class="row">
+        <label>Sender (email only)</label>
+        <input id="sender" placeholder="alerts@bank.com" />
+      </div>
+      <div class="row">
+        <label>Content</label>
+        <textarea id="content" placeholder="Paste suspicious text or leave blank to analyze this page"></textarea>
+      </div>
+      <button class="btn" id="analyze">Analyze threat</button>
+      <div id="out"></div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
