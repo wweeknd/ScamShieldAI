@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./.venv/Scripts/python.exe -c \"from app.main import app; print\\('import ok, routes:', len\\([r for r in app.routes]\\)\\)\")",
+      "Bash(rm -f _smoke.py _smoke.db)",
+      "Bash(npm install *)",
+      "Bash(./.venv/Scripts/python.exe -c \"import app.main; print\\('import OK — routes:', len\\(app.main.app.routes\\)\\)\")",
+      "Bash(curl -s http://127.0.0.1:8000/warmup)",
+      "Bash(curl -s http://127.0.0.1:8000/dashboard/stats)",
+      "Bash(curl -s http://127.0.0.1:8000/campaigns)",
+      "Bash(curl -s -X POST http://127.0.0.1:8000/analyze -H \"Content-Type: application/json\" -d '{\"type\":\"sms\",\"content\":\"URGENT: Your SecurePay Global account is locked. Verify at http://securepay-global.com/verify or call +1 415-555-0132.\",\"demo_mode\":true}')",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('id',d['id'],'| score',d['risk_score'],'| sev',d['severity'],'| agents',d['agents']\\); print\\('reasons:',d['reasons'][:3]\\); c=d['correlation']; print\\('correlation -> related',c['related_count'],'| campaign',c['campaign_name']\\); print\\('explanation:',d['explanation'][:160]\\)\")",
+      "Bash(curl -s http://127.0.0.1:8000/network)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('nodes',len\\(d['nodes']\\),'links',len\\(d['links']\\)\\); from collections import Counter; print\\('kinds:',Counter\\(n['kind'] for n in d['nodes']\\)\\)\")",
+      "Bash(command -v magick convert rsvg-convert inkscape)",
+      "Bash(python -c \"import PIL, PIL.__version__ if hasattr\\(PIL,'__version__'\\) else 0; print\\('pillow', PIL.__version__\\)\")",
+      "Bash(\"C:/Users/Aadarsh/OneDrive/Documents/hackathon/backend/.venv/Scripts/python.exe\" -c \"import PIL; print\\('pillow', PIL.__version__\\)\")",
+      "Bash(\"C:/Users/Aadarsh/OneDrive/Documents/hackathon/backend/.venv/Scripts/python.exe\" -m pip install --quiet pillow)",
+      "Bash(npm run *)",
+      "Bash(npm uninstall *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:8000/api/dashboard/stats)",
+      "WebFetch(domain:render.com)",
+      "Read(//tmp/**)",
+      "Bash(.venv\\\\Scripts\\\\python.exe -m uvicorn app.main:app --host 0.0.0.0 --port 8000)",
+      "Bash(gh auth *)",
+      "Read(//c/Users/Aadarsh/AppData/Local/Programs/**)",
+      "Read(//c/Users/Aadarsh/**)",
+      "Bash(node -e \"const c=require\\('./tailwind.config.js'\\); console.log\\('fonts:', JSON.stringify\\(c.theme.extend.fontFamily\\)\\); console.log\\('sizes keys:', Object.keys\\(c.theme.extend.fontSize\\).join\\(','\\)\\)\")"
+    ]
+  }
+}

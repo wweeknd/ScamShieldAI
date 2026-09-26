@@ -1,0 +1,19 @@
+# ScamShield AI
+
+> ScamShield AI is an AI-powered, multi-channel scam detection and correlation platform. It analyzes SMS messages, emails, URLs, QR codes, and job offers, then correlates suspicious events across channels to reveal coordinated scam campaigns.
+
+ScamShield AI runs a multi-agent engine (URL, Text/SMS, Email, Job, QR and a Correlation agent) orchestrated with LangGraph. Each item receives a risk score (0-100), a severity (Safe / Suspicious / High Risk), extracted indicators, and a plain-language analyst summary.
+
+## Pages
+
+- [Dashboard](https://www.scamshield-ai.com/): threat overview, statistics and recent detections
+- [Analyze](https://www.scamshield-ai.com/analyze): submit an SMS, email, URL, QR image or job offer for analysis
+- [Scam Network](https://www.scamshield-ai.com/network): interactive graph of events linked by shared indicators
+- [History](https://www.scamshield-ai.com/history): filterable log of all analyzed items
+- [Privacy Policy](https://www.scamshield-ai.com/privacy): data handling, retention and security
+- [Terms & Conditions](https://www.scamshield-ai.com/terms): service terms and acceptable use
+
+## Notes
+
+- The core differentiator is cross-channel correlation: matching shared phones, domains, emails and company names to group separate events into a single scam campaign.
+- A Demo Mode runs the full experience offline on realistic sample data.
